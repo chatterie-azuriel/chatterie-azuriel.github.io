@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Editor cruft
+*.swp
+*~
+
+# Internal working docs — kept local, never published
+plan-du-site.md
+questions-pour-safia.md
+theme-demo.html

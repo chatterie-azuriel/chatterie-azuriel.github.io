@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chatterie d'Azuriel — Élevage familial de Ragdolls à Strasbourg</title>
+<meta name="description" content="Élevage familial de chatons Ragdoll LOOF à Strasbourg (Alsace). Chatons doux et sociables, parents testés HCM/PKD, vaccinés et identifiés. Découvrez nos chatons et la FAQ.">
+<meta name="theme-color" content="#FAF9F6">
+<!-- Open Graph (pour le partage Instagram / WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chatterie d'Azuriel — Chatons Ragdoll à Strasbourg">
+<meta property="og:description" content="Élevage familial de chatons Ragdoll LOOF, doux et câlins, à Strasbourg.">
+<meta property="og:image" content="logo.jpg">
+<link rel="icon" href="logo_cat_only.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#37434D; --muted:#6b7782;
+    --blue:#6E94B5; --blue-deep:#5b86a8;
+    --bg:#FAF9F6; --fg:var(--ink);
+    --glass:rgba(255,255,255,.5);
+    --glass-border:rgba(55,67,77,.10);
+    --glass-shadow:0 8px 30px -12px rgba(55,67,77,.18);
+    --maxw:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    color:var(--fg); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background:
+      radial-gradient(55% 45% at 82% 22%, rgba(110,148,181,.12), transparent 70%),
+      radial-gradient(50% 40% at 12% 65%, rgba(185,163,212,.10), transparent 70%),
+      var(--bg);
+    background-attachment:fixed;
+  }
+
+  /* ===================== AURORA (top, soft pastel) ===================== */
+  .aurora{
+    position:fixed; top:0; left:0; right:0; height:100vh; z-index:-1;
+    overflow:hidden; pointer-events:none;
+    --stripes:repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%);
+    --rainbow:repeating-linear-gradient(100deg, #eb1e1e 10%, #50b56f 15%, #50b56f 20%, #2aa1ff 25%, #6567c3 30%);
+    background-image:var(--stripes), var(--rainbow);
+    background-size:300%, 200%;
+    background-position:50% 50%, 50% 50%;
+    filter:blur(12px) invert(100%);
+    opacity:.5;
+    -webkit-mask-image:radial-gradient(100% 75% at 50% 0%, #000 20%, transparent 70%);
+            mask-image:radial-gradient(100% 75% at 50% 0%, #000 20%, transparent 70%);
+  }
+  .aurora::after{
+    content:""; position:absolute; inset:0;
+    background-image:var(--stripes), var(--rainbow);
+    background-size:200%, 100%;
+    background-position:50% 50%, 50% 50%;
+    mix-blend-mode:difference;
+    animation:aurora 60s linear infinite;
+  }
+  @keyframes aurora{ from{background-position:50% 50%, 50% 50%} to{background-position:350% 50%, 350% 50%} }
+  @media (prefers-reduced-motion: reduce){ .aurora::after{animation:none} }
+
+  /* ===================== LAYOUT PRIMITIVES ===================== */
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+  section{padding:60px 0; scroll-margin-top:80px}
+  .eyebrow{font-family:'Geist Mono',monospace; text-transform:uppercase; letter-spacing:3px; font-size:12px; color:var(--blue); display:inline-block; margin-bottom:14px}
+  h2{font-size:clamp(26px,4vw,38px); font-weight:600; letter-spacing:-.5px; margin:0 0 10px}
+  .sec-intro{color:var(--muted); max-width:620px; margin:0 0 30px; font-size:17px}
+
+  .glass{
+    background:var(--glass);
+    -webkit-backdrop-filter:blur(10px) saturate(135%);
+            backdrop-filter:blur(10px) saturate(135%);
+    border:1px solid var(--glass-border);
+    box-shadow:var(--glass-shadow), inset 0 1px 0 rgba(255,255,255,.6);
+  }
+
+  /* ===================== NAV ===================== */
+  nav{position:sticky; top:0; z-index:50; backdrop-filter:blur(8px); background:rgba(250,249,246,.7); border-bottom:1px solid rgba(55,67,77,.06)}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; padding-top:14px; padding-bottom:14px}
+  .brand{display:flex; align-items:center; gap:11px; font-weight:600; letter-spacing:.2px; text-decoration:none; color:var(--fg)}
+  .brand img{height:36px; width:36px; object-fit:contain}
+  .nav-links{display:flex; gap:26px; align-items:center}
+  .nav-links a{text-decoration:none; color:var(--muted); font-size:15px; transition:color .15s}
+  .nav-links a:hover{color:var(--fg)}
+  .nav-cta{background:var(--blue); color:#fff !important; padding:9px 18px; border-radius:999px; font-weight:500}
+  @media (max-width:720px){ .nav-links a:not(.nav-cta){display:none} }
+
+  /* ===================== HERO ===================== */
+  header.hero{padding:74px 0 52px; text-align:center}
+  .hero-logo{width:clamp(220px,44vw,310px); height:auto; margin:0 auto 18px; display:block; filter:drop-shadow(0 12px 30px rgba(110,148,181,.26))}
+  h1{font-size:clamp(30px,5vw,52px); line-height:1.06; margin:0 0 16px; font-weight:600; letter-spacing:-1px}
+  h1 .script{font-style:italic; font-weight:500; color:var(--blue)}
+  .lead{font-size:clamp(17px,2.4vw,21px); color:var(--muted); max-width:600px; margin:0 auto 32px}
+  .cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+  .btn{font-family:inherit; font-size:15px; font-weight:500; cursor:pointer; padding:13px 26px; border-radius:999px; border:1px solid transparent; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:transform .15s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--blue); color:#fff; box-shadow:0 8px 24px -6px var(--blue)}
+  .btn-ghost{color:var(--fg); border-color:var(--glass-border); background:var(--glass); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
+
+  /* ===================== TRAIT PILLS ===================== */
+  .traits{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px}
+  .trait{border-radius:18px; padding:22px}
+  .trait .ico{font-size:26px; margin-bottom:8px}
+  .trait h3{margin:0 0 4px; font-size:17px; font-weight:600}
+  .trait p{margin:0; color:var(--muted); font-size:14.5px}
+
+  /* ===================== CATS ===================== */
+  .cats{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px}
+  .cat{border-radius:22px; overflow:hidden}
+  .cat img{width:100%; height:230px; object-fit:cover; display:block}
+  .cat .body{padding:18px 20px}
+  .cat h3{margin:0 0 2px; font-size:20px; font-weight:600}
+  .cat .role{font-family:'Geist Mono',monospace; font-size:12px; color:var(--blue); text-transform:uppercase; letter-spacing:1px}
+  .cat p{margin:10px 0 0; color:var(--muted); font-size:14.5px}
+
+  /* ===================== KITTENS ===================== */
+  .kitten-meta{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:26px}
+  .chip{font-family:'Geist Mono',monospace; font-size:12.5px; padding:7px 13px; border-radius:999px; background:rgba(110,148,181,.12); color:var(--blue-deep)}
+  .kittens{display:grid; grid-template-columns:repeat(auto-fit,minmax(176px,1fr)); gap:16px}
+  .kitten{border-radius:20px; overflow:hidden; text-align:center}
+  .kitten img{width:100%; height:190px; object-fit:cover; object-position:center 28%; display:block}
+  .kitten .body{padding:15px 14px 20px}
+  .kitten h3{margin:0 0 3px; font-size:18px; font-weight:600}
+  .kitten .meta{font-family:'Geist Mono',monospace; font-size:12px; color:var(--muted)}
+  .badge{display:inline-block; margin-top:13px; font-size:12px; font-family:'Geist Mono',monospace; padding:5px 12px; border-radius:999px; background:rgba(80,181,111,.14); color:#3e8b57}
+
+  /* ===================== FAQ ===================== */
+  .faq-group + .faq-group{margin-top:28px}
+  .faq-group > h3{font-family:'Geist Mono',monospace; text-transform:uppercase; letter-spacing:2px; font-size:13px; color:var(--muted); margin:0 0 14px}
+  details{border-radius:16px; padding:2px 22px; margin-bottom:12px}
+  summary{cursor:pointer; padding:17px 0; font-weight:500; font-size:17px; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; font-family:'Geist Mono',monospace; color:var(--blue); font-size:22px; transition:transform .2s ease; flex:none}
+  details[open] summary::after{transform:rotate(45deg)}
+  details > p{margin:0 0 19px; color:var(--muted); font-size:15.5px}
+  details a{color:var(--blue-deep)}
+
+  /* ===================== CONTACT ===================== */
+  .contact-card{border-radius:24px; padding:38px clamp(24px,5vw,48px); text-align:center}
+  .contact-card h2{margin-bottom:8px}
+  .contact-buttons{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:24px}
+  .loc{margin-top:20px; color:var(--muted); font-size:14.5px; font-family:'Geist Mono',monospace}
+
+  footer{padding:42px 0; text-align:center; color:var(--muted); font-family:'Geist Mono',monospace; font-size:12px; letter-spacing:.4px; line-height:1.9}
+  footer a{color:var(--muted)}
+  .todo{color:#b9892b; background:rgba(185,137,43,.10); padding:1px 6px; border-radius:5px}
+</style>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#top"><img src="logo_cat_only.png" alt="">Chatterie d'Azuriel</a>
+      <div class="nav-links">
+        <a href="#chats">Nos chats</a>
+        <a href="#chatons">Les chatons</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://www.instagram.com/theodred_the_cat/" target="_blank" rel="noopener">Instagram</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="top"></div>
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Ragdoll · LOOF · Alsace</span>
+      <img class="hero-logo" src="logo_png.png" alt="Logo Chatterie d'Azuriel — élevage de Ragdoll">
+      <h1>Élevage familial de Ragdolls <span class="script">à Strasbourg</span></h1>
+      <p class="lead">Des chatons doux, câlins et sociables, élevés en pleine maison et inscrits au LOOF.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#chatons">Voir les chatons 🐾</a>
+        <a class="btn btn-ghost" href="#faq">La FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- LE RAGDOLL -->
+  <section id="ragdoll">
+    <div class="wrap">
+      <span class="eyebrow">La race</span>
+      <h2>Le Ragdoll, une « poupée de chiffon »</h2>
+      <p class="sec-intro">Le Ragdoll est un grand chat au poil mi-long et aux yeux d'un bleu profond, réputé pour son caractère exceptionnellement doux. Il se détend dans les bras, suit sa famille partout et adore les câlins.</p>
+      <div class="traits">
+        <div class="trait glass"><div class="ico">🤍</div><h3>Très câlin</h3><p>Affectueux et calme, il cherche le contact et se love volontiers contre vous.</p></div>
+        <div class="trait glass"><div class="ico">👶</div><h3>Sociable</h3><p>Patient avec les enfants, il s'entend aussi très bien avec chiens et autres chats.</p></div>
+        <div class="trait glass"><div class="ico">👁️</div><h3>Yeux bleus</h3><p>Sa robe soyeuse et son regard azur sont la signature de la race.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS CHATS -->
+  <section id="chats">
+    <div class="wrap">
+      <span class="eyebrow">La famille</span>
+      <h2>Nos chats</h2>
+      <p class="sec-intro">Nos reproducteurs sont testés génétiquement (CMH &amp; PKD) et négatifs FIV/FeLV. La santé de nos chatons commence par la leur.</p>
+      <div class="cats">
+        <div class="cat glass">
+          <img src="mother_cat.jpg" alt="Yuzu, femelle Ragdoll blue mitted">
+          <div class="body"><span class="role">Maman</span><h3>Yuzu</h3><p>Blue mitted Ragdoll, très douce et câline. Une maman tendre et attentive.</p></div>
+        </div>
+        <div class="cat glass">
+          <img src="father_cat.jpg" alt="Yumi, mâle Ragdoll">
+          <div class="body"><span class="role">Papa</span><h3>Yumi</h3><p>Un mâle majestueux au grand gabarit, au tempérament posé et élégant.</p></div>
+        </div>
+        <div class="cat glass">
+          <img src="chat_2.jpg" alt="Theodred, mâle Ragdoll">
+          <div class="body"><span class="role">La mascotte</span><h3>Theodred</h3><p>Notre seal mitted, star de notre Instagram <a href="https://www.instagram.com/theodred_the_cat/" target="_blank" rel="noopener">@theodred_the_cat</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LES CHATONS -->
+  <section id="chatons">
+    <div class="wrap">
+      <span class="eyebrow">Disponibles</span>
+      <h2>Nos chatons</h2>
+      <p class="sec-intro">Portée née le 5 mai 2026 de Yuzu &amp; Yumi — 5 chatons Ragdoll LOOF, qui grandissent paisiblement auprès de leur maman.</p>
+      <div class="kitten-meta">
+        <span class="chip">1 500 €</span>
+        <span class="chip">Disponibles début août</span>
+        <span class="chip">Pédigrée LOOF</span>
+        <span class="chip">Vaccinés &amp; identifiés</span>
+      </div>
+      <div class="kittens">
+        <div class="kitten glass"><img src="violet.jpg" alt="Violet, chaton Ragdoll mâle blue bicolore"><div class="body"><h3>Violet</h3><div class="meta">mâle · blue bicolore</div><span class="badge">Disponible</span></div></div>
+        <div class="kitten glass"><img src="orange.jpg" alt="Orange, chaton Ragdoll mâle blue bicolore"><div class="body"><h3>Orange</h3><div class="meta">mâle · blue bicolore</div><span class="badge">Disponible</span></div></div>
+        <div class="kitten glass"><img src="rose.jpg" alt="Rose, chatonne Ragdoll femelle blue bicolore"><div class="body"><h3>Rose</h3><div class="meta">femelle · blue bicolore</div><span class="badge">Disponible</span></div></div>
+        <div class="kitten glass"><img src="gris.jpg" alt="Gris, chaton Ragdoll mâle blue colorpoint mitted"><div class="body"><h3>Gris</h3><div class="meta">mâle · colorpoint mitted</div><span class="badge">Disponible</span></div></div>
+        <div class="kitten glass"><img src="bleu.jpg" alt="Bleu, chaton Ragdoll mâle blue colorpoint mitted"><div class="body"><h3>Bleu</h3><div class="meta">mâle · colorpoint mitted</div><span class="badge">Disponible</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <span class="eyebrow">Vos questions</span>
+      <h2>Questions fréquentes</h2>
+
+      <div class="faq-group">
+        <h3>Le caractère &amp; la vie à la maison</h3>
+        <details open class="glass"><summary>Quel est le caractère d'un Ragdoll ?</summary><p>Le Ragdoll est sans doute l'un des chats les plus doux qui soient. Calme, affectueux et très attaché à ses humains, il adore les câlins et suit sa famille de pièce en pièce. On le surnomme « poupée de chiffon » parce qu'il se relâche complètement quand on le prend dans les bras.</p></details>
+        <details class="glass"><summary>Le Ragdoll est-il bon avec les enfants ?</summary><p>Oui, c'est l'une de ses plus belles qualités. Patient et tolérant, il supporte bien l'animation d'une maison et les câlins des plus petits. Nos chatons grandissent en pleine maison, habitués aux bruits du quotidien et à la présence d'enfants.</p></details>
+        <details class="glass"><summary>Puis-je avoir un chien à la maison ?</summary><p>Absolument ! Le Ragdoll est si sociable qu'on le compare souvent à un chien. Il cohabite généralement très bien avec un chien, surtout si celui-ci est calme et habitué aux chats. Une présentation en douceur, et tout le monde devient vite copain. 🐶🐱</p></details>
+        <details class="glass"><summary>Et avec un autre chat ou d'autres animaux ?</summary><p>Très bien aussi. Le Ragdoll a bon caractère et accepte volontiers la compagnie d'un autre chat ou d'un autre animal. Si vous êtes souvent absent, adopter deux chatons est même une excellente idée : ils se tiennent compagnie.</p></details>
+        <details class="glass"><summary>Je travaille la journée : peut-il rester seul ?</summary><p>Le Ragdoll supporte quelques heures de solitude, mais il aime la compagnie et peut s'ennuyer s'il reste seul trop longtemps. Laissez-lui des jeux, un arbre à chat et, idéalement, un compagnon. En contrepartie, il vous accueillera à la porte comme un vrai pot de colle. 🥰</p></details>
+        <details class="glass"><summary>Est-ce un chat d'intérieur ?</summary><p>Oui, nous recommandons de le garder à l'intérieur. Très confiant et pas méfiant pour un sou, le Ragdoll n'a pas l'instinct de la rue et risquerait gros dehors. Un balcon sécurisé, un jardin clôturé ou des sorties au harnais lui offriront l'air libre en toute sécurité.</p></details>
+        <details class="glass"><summary>Combien de temps vit un Ragdoll, et quelle taille fait-il ?</summary><p>C'est un grand chat à la croissance lente : il atteint sa taille adulte vers 3 à 4 ans. Les mâles pèsent souvent 6 à 9 kg, les femelles 4 à 6 kg. Bien entouré, un Ragdoll vit en moyenne 12 à 17 ans.</p></details>
+      </div>
+
+      <div class="faq-group">
+        <h3>Santé, pedigree &amp; élevage</h3>
+        <details class="glass"><summary>Vos chatons sont-ils inscrits au LOOF ?</summary><p>Oui. Chaque chaton part avec son pédigrée LOOF (Livre Officiel des Origines Félines), qui atteste de ses origines et de son appartenance réelle à la race. En France, sans pedigree LOOF, un chat ne peut pas légalement être vendu comme « Ragdoll ».</p></details>
+        <details class="glass"><summary>Les parents sont-ils testés ?</summary><p>Oui. Yuzu et Yumi sont testés génétiquement pour les deux maladies héréditaires du Ragdoll — la CMH (cardiomyopathie hypertrophique) et la PKD/RKD (polykystose rénale) — et sont négatifs au FIV et au FeLV.</p></details>
+        <details class="glass"><summary>À quel âge le chaton peut-il partir ?</summary><p>À partir de début août, soit environ 12 semaines (3 mois). Nous ne laissons jamais partir un chaton avant : il a besoin de rester auprès de sa maman et de sa fratrie pour être bien sevré, propre, vacciné et sociabilisé.</p></details>
+        <details class="glass"><summary>Qu'est-ce qui est inclus avec le chaton ?</summary><p>Chaque chaton part avec : son pédigrée LOOF, l'identification par puce électronique, ses primo-vaccins, un vermifuge à jour, un contrat de vente, un certificat vétérinaire de bonne santé, et un livret d'accueil avec quelques petites surprises. ✨</p></details>
+        <details class="glass"><summary>Comment entretenir son poil ?</summary><p>Bonne nouvelle : le poil mi-long du Ragdoll n'a presque pas de sous-poil, il s'emmêle donc peu. Un brossage 1 à 2 fois par semaine suffit (un peu plus pendant les mues). C'est un chat plutôt facile à entretenir.</p></details>
+        <details class="glass"><summary>Le Ragdoll perd-il ses poils ? Est-il hypoallergénique ?</summary><p>Il perd un peu ses poils, surtout en période de mue, mais moins qu'on ne l'imagine grâce à son faible sous-poil. En revanche, aucun chat n'est vraiment hypoallergénique : en cas d'allergie, mieux vaut passer un peu de temps auprès d'un Ragdoll avant de se décider.</p></details>
+        <details class="glass"><summary>Que mange un Ragdoll ?</summary><p>Une alimentation de qualité, riche en protéines animales, est idéale pour sa belle robe et sa santé. Nous vous indiquons à l'adoption ce que mange déjà votre chaton, pour une transition tout en douceur.</p></details>
+      </div>
+
+      <div class="faq-group">
+        <h3>Adoption &amp; réservation</h3>
+        <details class="glass"><summary>Quel est le prix d'un chaton, et pourquoi ?</summary><p>Nos chatons sont proposés à 1 500 €. Ce prix reflète tout ce qui entoure un chaton bien né : pédigrée LOOF, tests de santé des parents, suivi vétérinaire, vaccins, identification et des mois de soins et de socialisation. Un prix trop bas cache souvent des économies… que l'on finit par payer chez le vétérinaire.</p></details>
+        <details class="glass"><summary>Comment réserver un chaton ?</summary><p>La réservation se fait après un échange avec nous, la signature du contrat de réservation et le versement d'un acompte de 30 % (soit 450 €). Vous pouvez nous écrire par email ou via Instagram. Le statut de chaque chaton (disponible / réservé) est tenu à jour sur cette page.</p></details>
+        <details class="glass"><summary>Puis-je vous rendre visite et rencontrer les parents ?</summary><p>Avec plaisir. Rien ne remplace une rencontre : vous verrez où grandissent les chatons et ferez connaissance avec leur maman Yuzu. Si une visite n'est pas possible, nous proposons volontiers photos, vidéos et un appel WhatsApp.</p></details>
+        <details class="glass"><summary>Proposez-vous la livraison ?</summary><p>Pas de livraison pour le moment : les chatons sont à venir chercher sur place, à Strasbourg / Lingolsheim. C'est aussi l'occasion de faire connaissance et de découvrir leur lieu de naissance. 🏡</p></details>
+        <details class="glass"><summary>Proposez-vous un suivi après l'adoption ?</summary><p>Oui, toujours. Une fois le chaton chez vous, nous restons disponibles pour toutes vos questions (alimentation, soins, comportement). Adopter chez nous, c'est rejoindre une petite famille : on adore avoir des nouvelles et des photos de nos bébés devenus grands ! 📸</p></details>
+      </div>
+
+      <div class="faq-group">
+        <h3>Et LA question qu'on nous pose vraiment 😄</h3>
+        <details class="glass"><summary>Accepteriez-vous d'échanger mon chat contre un chaton Ragdoll ?</summary><p>On nous le demande plus souvent qu'on ne le croit… alors répondons avec le sourire : c'est <strong>non</strong>. Un grand non, mais tout en tendresse 🤍. Un chaton Ragdoll ne se troque pas : derrière lui, il y a un pédigrée, des parents testés, des vaccins et des mois de soins. Et surtout, votre minou, lui, n'a pas de prix — il vous a choisi, <em>vous</em>. Gardez-le précieusement, faites-lui un gros câlin de notre part… et si un jour le cœur vous en dit, un chaton Ragdoll viendra l'accompagner. 🐱❤️</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card glass">
+        <span class="eyebrow">Contact</span>
+        <h2>Un chaton vous fait craquer ?</h2>
+        <p class="sec-intro" style="margin:0 auto">Écrivez-nous pour toute question, des photos ou une rencontre. Nous cherchons à nos chatons des familles aimantes et responsables. ❤️</p>
+        <div class="contact-buttons">
+          <a class="btn btn-primary" href="mailto:chatterie_azuriel@outlook.fr">✉️ chatterie_azuriel@outlook.fr</a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/theodred_the_cat/" target="_blank" rel="noopener">📸 Instagram</a>
+          <a class="btn btn-ghost" href="https://www.leboncoin.fr/ad/animaux/3212185891" target="_blank" rel="noopener">🏷️ Leboncoin</a>
+        </div>
+        <p class="loc">📍 Strasbourg / Lingolsheim (67) · Élevage familial</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Chatterie d'Azuriel · Strasbourg · Chatons Ragdoll inscrits au LOOF<br>
+      <a href="https://www.instagram.com/theodred_the_cat/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.leboncoin.fr/ad/animaux/3212185891" target="_blank" rel="noopener">Annonce Leboncoin</a>
+    </div>
+  </footer>
+</body>
+</html>
