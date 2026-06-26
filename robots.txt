@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chatterie-azuriel.github.io/sitemap.xml
